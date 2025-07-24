@@ -5,41 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ashveil RPG</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Alerta para enlace externo (Discord)
+      function salirAVinculo(url) {
+        if (confirm("⚠️ AVISO: Estás a punto de salir de la web de Ashveil.\n¿Deseas continuar?")) {
+          window.open(url, '_blank');
+        }
+      }
+
+      // Buscador básico
+      function buscar() {
+        const input = document.getElementById('busqueda').value.toLowerCase();
+        const secciones = document.querySelectorAll('.categoria');
+
+        secciones.forEach((seccion) => {
+          const texto = seccion.textContent.toLowerCase();
+          if (texto.includes(input)) {
+            seccion.style.display = "block";
+          } else {
+            seccion.style.display = "none";
+          }
+        });
+      }
+    </script>
   </head>
+
   <body class="bg-gray-950 text-white font-sans">
+
     <!-- Hero -->
     <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[url('https://i.imgur.com/8Io8U5X.png')] bg-cover bg-center">
       <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
       <div class="relative z-10 max-w-2xl">
         <h1 class="text-5xl font-bold mb-4 text-amber-400">Ashveil RPG</h1>
-        <p class="text-lg text-gray-300 mb-6">
-          Un MMORPG en Minecraft lleno de magia, combate, exploración y progreso. Elige tu camino y tu destino en Ashveil.
+        <p class="text-lg text-gray-300 mb-4">
+          Elige tu clase, tu estilo, y forja tu historia en un mundo lleno de posibilidades.
         </p>
         <div class="flex justify-center gap-4 flex-wrap">
-          <a href="https://discord.gg/QfhDQJ3M2C" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-4 rounded-full transition">Únete a Discord</a>
+          <a onclick="salirAVinculo('https://discord.gg/QfhDQJ3M2C')" class="cursor-pointer bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-4 rounded-full transition">Discord</a>
           <a href="#" class="border border-white hover:bg-white hover:text-black py-2 px-4 rounded-full transition">Wiki</a>
           <a href="#" class="bg-white text-black font-semibold py-2 px-4 rounded-full transition hover:bg-gray-200">Cómo Jugar</a>
         </div>
       </div>
     </section>
 
-    <!-- Features -->
+    <!-- Buscador -->
+    <section class="bg-gray-900 py-10 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <input id="busqueda" oninput="buscar()" type="text" placeholder="🔍 Buscar en las categorías..." class="w-full md:w-2/3 px-4 py-2 rounded-lg text-black focus:outline-none">
+      </div>
+    </section>
+
+    <!-- Categorías -->
     <section class="bg-gray-900 py-16 px-6">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-10 text-amber-300">Características destacadas</h2>
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 text-amber-300 text-center">Categorías principales</h2>
         <div class="grid md:grid-cols-3 gap-8 text-left">
-          <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-amber-400 mb-2">Sistema de Fama</h3>
-            <p class="text-gray-300">Gana reputación, desbloquea rangos únicos y accede a zonas exclusivas según tu fama.</p>
+
+          <!-- Cómo Jugar -->
+          <div class="categoria bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-amber-400 mb-2">Cómo Jugar</h3>
+            <p class="text-gray-300">Guía para nuevos jugadores: instalación, conexión al servidor y primeros pasos.</p>
           </div>
-          <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-amber-400 mb-2">Misiones con Historia</h3>
-            <p class="text-gray-300">Vive un mundo con historia y toma decisiones que afectan tu entorno.</p>
+
+          <!-- Wiki -->
+          <div class="categoria bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-amber-400 mb-2">Wiki</h3>
+            <p class="text-gray-300">Consulta todas las clases, habilidades, mecánicas y mapas dentro del universo de Ashveil.</p>
           </div>
-          <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-amber-400 mb-2">Combate y Jefes Épicos</h3>
-            <p class="text-gray-300">Enfrenta criaturas únicas con mecánicas avanzadas y consigue loot legendario.</p>
+
+          <!-- Comunidad / Discord -->
+          <div class="categoria bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-amber-400 mb-2">Comunidad</h3>
+            <p class="text-gray-300">Únete a nuestro Discord, entérate de eventos, sugerencias y haz amigos dentro del mundo de Ashveil.</p>
           </div>
+
         </div>
       </div>
     </section>
