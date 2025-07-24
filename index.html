@@ -5,110 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ashveil - Mundo RPG</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('fondo.jpg'); /* Cambia esto por el nombre correcto del fondo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .bg-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="text-white font-sans">
 
-  <!-- ENCABEZADO -->
-  <header class="bg-gray-800 shadow-md py-6 px-4">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <h1 class="text-3xl font-bold text-amber-400">Ashveil</h1>
-      <nav>
-        <ul class="flex gap-6 text-sm">
-          <li><a href="index.html" class="hover:text-amber-300">Inicio</a></li>
-          <li><a href="#" onclick="confirmDiscord()" class="hover:text-amber-300">Comunidad</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- OVERLAY OSCURO -->
+  <div class="bg-overlay min-h-screen">
 
-  <!-- HERO PRINCIPAL -->
-  <section class="bg-gray-950 py-20 px-6 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-amber-400 mb-4">¡Bienvenido al mundo de Ashveil!</h2>
-      <p class="text-lg text-gray-300 mb-6">Un servidor MMORPG para Minecraft donde la fantasía, los desafíos y la aventura se fusionan.</p>
-      <a href="como-jugar.html" class="inline-block bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 px-6 rounded-xl transition">Cómo jugar</a>
-    </div>
-  </section>
-
-  <!-- CATEGORÍAS -->
-  <section class="bg-gray-900 py-16 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold mb-10 text-amber-300 text-center">Categorías principales</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-left">
-
-        <a href="como-jugar.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Cómo Jugar</h3>
-          <p class="text-gray-300">Instalación, conexión al servidor y primeros pasos.</p>
-        </a>
-
-        <a href="wiki.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Wiki</h3>
-          <p class="text-gray-300">Todo sobre habilidades, mapas, clases y más.</p>
-        </a>
-
-        <a href="#" onclick="confirmDiscord()" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Comunidad</h3>
-          <p class="text-gray-300">Chatea en Discord y conoce a otros aventureros.</p>
-        </a>
-
-        <a href="lore.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Lore</h3>
-          <p class="text-gray-300">Sumérgete en la historia y el origen de Ashveil.</p>
-        </a>
-
-        <a href="enemigos.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Enemigos</h3>
-          <p class="text-gray-300">Consulta criaturas, jefes y mecánicas de combate.</p>
-        </a>
-
-        <a href="mascotas.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Mascotas</h3>
-          <p class="text-gray-300">Acompañantes que te ayudan en la aventura.</p>
-        </a>
-
-        <a href="staff.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Staff</h3>
-          <p class="text-gray-300">Conoce al equipo detrás del proyecto.</p>
-        </a>
-
-        <a href="solicitud-staff.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Solicitud para Staff</h3>
-          <p class="text-gray-300">¿Te gustaría unirte al equipo? Aplica aquí.</p>
-        </a>
-
-        <a href="creador-contenido.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Creador de Contenido</h3>
-          <p class="text-gray-300">Postúlate como streamer o youtuber oficial.</p>
-        </a>
-
-        <a href="comandos.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Comandos</h3>
-          <p class="text-gray-300">Lista de comandos útiles y personalizados.</p>
-        </a>
-
-        <a href="objetos.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Objetos Personalizados</h3>
-          <p class="text-gray-300">Armas, armaduras y objetos únicos de Ashveil.</p>
-        </a>
-
-        <a href="eventos.html" class="block bg-gray-800 hover:bg-gray-700 transition p-6 rounded-xl shadow-lg">
-          <h3 class="text-xl font-semibold text-amber-400 mb-2">Eventos y Jefes Mundiales</h3>
-          <p class="text-gray-300">Participa en eventos únicos y enfréntate a jefes globales.</p>
-        </a>
-
+    <!-- ENCABEZADO -->
+    <header class="bg-black bg-opacity-80 shadow-md py-6 px-4">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <h1 class="text-3xl font-bold text-yellow-400">Ashveil</h1>
+        <nav>
+          <ul class="flex gap-6 text-sm">
+            <li><a href="index.html" class="hover:text-yellow-300">Inicio</a></li>
+            <li><a href="#" onclick="confirmDiscord()" class="hover:text-yellow-300">Comunidad</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="bg-gray-800 py-6 mt-10 text-center text-gray-400 text-sm">
-    <p>&copy; 2025 Ashveil. Todos los derechos reservados.</p>
-  </footer>
+    <!-- HERO -->
+    <section class="py-20 px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">¡Bienvenido a Ashveil!</h2>
+        <p class="text-lg text-gray-200 mb-6">Un servidor MMORPG con historia, desafíos y mucho por explorar.</p>
+        <a href="como-jugar.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition">Cómo jugar</a>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 text-yellow-300 text-center">Categorías principales</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+
+          <a href="como-jugar.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Cómo Jugar</h3>
+            <p class="text-gray-300">Guía para empezar en Ashveil desde cero.</p>
+          </a>
+
+          <a href="wiki.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Wiki</h3>
+            <p class="text-gray-300">Habilidades, sistemas, mapas y mecánicas.</p>
+          </a>
+
+          <a href="#" onclick="confirmDiscord()" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Comunidad</h3>
+            <p class="text-gray-300">Únete al Discord oficial de Ashveil.</p>
+          </a>
+
+          <a href="lore.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Lore</h3>
+            <p class="text-gray-300">Descubre la historia del mundo de Ashveil.</p>
+          </a>
+
+          <a href="enemigos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Enemigos</h3>
+            <p class="text-gray-300">Criaturas, jefes y zonas peligrosas.</p>
+          </a>
+
+          <a href="mascotas.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Mascotas</h3>
+            <p class="text-gray-300">Compañeros únicos que puedes conseguir.</p>
+          </a>
+
+          <a href="staff.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Staff</h3>
+            <p class="text-gray-300">Conoce al equipo que mantiene el servidor.</p>
+          </a>
+
+          <a href="solicitud-staff.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Solicitud para Staff</h3>
+            <p class="text-gray-300">¿Quieres ayudar? Postúlate aquí.</p>
+          </a>
+
+          <a href="creador-contenido.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Creador de Contenido</h3>
+            <p class="text-gray-300">Aplica como youtuber o streamer.</p>
+          </a>
+
+          <a href="comandos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Comandos</h3>
+            <p class="text-gray-300">Lista de comandos disponibles en el servidor.</p>
+          </a>
+
+          <a href="objetos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Objetos Personalizados</h3>
+            <p class="text-gray-300">Equipo y objetos únicos que puedes obtener.</p>
+          </a>
+
+          <a href="eventos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Eventos</h3>
+            <p class="text-gray-300">Eventos globales y desafíos especiales.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PIE -->
+    <footer class="bg-black bg-opacity-80 py-6 mt-10 text-center text-gray-400 text-sm">
+      <p>&copy; 2025 Ashveil. Todos los derechos reservados.</p>
+    </footer>
+
+  </div>
 
   <!-- SCRIPT DISCORD -->
   <script>
     function confirmDiscord() {
-      if (confirm("AVISO: Estás a punto de salir de la web. ¿Deseas continuar a Discord?")) {
+      if (confirm("¿Deseas abrir el Discord oficial de Ashveil?")) {
         window.open("https://discord.gg/QfhDQJ3M2C", "_blank");
       }
     }
