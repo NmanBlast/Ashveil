@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cómo Jugar - Ashveil</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('fondo.jpg'); /* Asegúrate de que esta imagen exista en tu carpeta */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .bg-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+  <!-- OVERLAY -->
+  <div class="bg-overlay min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-black bg-opacity-80 shadow-md py-6 px-4">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <h1 class="text-3xl font-bold text-yellow-400">Ashveil</h1>
+        <nav>
+          <ul class="flex gap-6 text-sm">
+            <li><a href="index.html" class="hover:text-yellow-300">Inicio</a></li>
+            <li><a href="#" onclick="confirmDiscord()" class="hover:text-yellow-300">Comunidad</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="py-20 px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-yellow-400 mb-8">¿Cómo Jugar?</h2>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          Actualmente, el servidor Ashveil se encuentra en una <strong>fase de beta cerrada</strong>, lo que significa que no está disponible para el público general todavía.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed mt-6">
+          La única forma de acceder al juego en esta etapa es participando como <strong>Tester oficial</strong>. Los testers tienen un rol fundamental: exploran el contenido, detectan errores, dan sugerencias y ayudan a pulir la experiencia de juego antes del lanzamiento completo.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed mt-6">
+          Si estás interesado en ser parte del desarrollo y formar parte de este selecto grupo de jugadores, puedes inscribirte desde nuestro Discord oficial en la sección <strong>"Solicitud Tester"</strong>.
+        </p>
+        <p class="text-lg text-yellow-400 mt-10 font-semibold">
+          ¡Tu ayuda es clave para construir Ashveil!
+        </p>
+        <div class="mt-10">
+          <a href="#" onclick="confirmDiscord()" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition">Unirme al Discord</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- PIE -->
+    <footer class="bg-black bg-opacity-80 py-6 mt-10 text-center text-gray-400 text-sm">
+      <p>&copy; 2025 Ashveil. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- SCRIPT DISCORD -->
+  <script>
+    function confirmDiscord() {
+      if (confirm("¿Deseas abrir el Discord oficial de Ashveil?")) {
+        window.open("https://discord.gg/QfhDQJ3M2C", "_blank");
+      }
+    }
+  </script>
+</body>
+</html>
