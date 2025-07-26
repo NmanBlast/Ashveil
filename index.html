@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ashveil - Mundo RPG</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Para iconos -->
 
   <style>
     body {
@@ -45,69 +46,72 @@
       </div>
     </section>
 
-    <!-- CATEGORÍAS -->
-    <section class="py-16 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-10 text-yellow-300 text-center">Categorías principales</h2>
-        <div class="grid md:grid-cols-3 gap-8 text-left">
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
 
-          <a href="wiki.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Wiki</h3>
-            <p class="text-gray-300">Habilidades, sistemas, mapas y mecánicas.</p>
-          </a>
+      <!-- Slider / Carrusel -->
+      <div class="relative mb-12">
+        <div class="overflow-hidden rounded-xl shadow-lg relative">
+          <div class="flex transition-transform duration-500 ease-in-out" id="slider">
+            <div class="min-w-full relative">
+              <img src="https://i.imgur.com/3rFJEBG.jpg" alt="Evento 1" class="w-full h-64 object-cover rounded-xl">
+              <div class="absolute bottom-4 left-6 bg-yellow-500 bg-opacity-80 px-4 py-2 rounded">
+                <h3 class="text-white font-bold text-lg">Evento de Verano - ¡No te lo pierdas!</h3>
+                <a href="eventos.html" class="underline text-black font-semibold">Ver detalles</a>
+              </div>
+            </div>
+            <div class="min-w-full relative">
+              <img src="https://i.imgur.com/Q4RdDqH.jpg" alt="Actualización" class="w-full h-64 object-cover rounded-xl">
+              <div class="absolute bottom-4 left-6 bg-yellow-500 bg-opacity-80 px-4 py-2 rounded">
+                <h3 class="text-white font-bold text-lg">Nueva actualización 1.2.0 disponible</h3>
+                <a href="noticias.html" class="underline text-black font-semibold">Leer más</a>
+              </div>
+            </div>
+          </div>
 
-          <a href="#" onclick="confirmDiscord()" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Comunidad</h3>
-            <p class="text-gray-300">Únete al Discord oficial de Ashveil.</p>
-          </a>
-
-          <a href="lore.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Lore</h3>
-            <p class="text-gray-300">Descubre la historia del mundo de Ashveil.</p>
-          </a>
-
-          <a href="enemigos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Enemigos</h3>
-            <p class="text-gray-300">Criaturas, jefes y zonas peligrosas.</p>
-          </a>
-
-          <a href="mascotas.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Mascotas</h3>
-            <p class="text-gray-300">Compañeros únicos que puedes conseguir.</p>
-          </a>
-
-          <a href="staff.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Staff</h3>
-            <p class="text-gray-300">Conoce al equipo que mantiene el servidor.</p>
-          </a>
-
-          <a href="solicitud-staff.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Solicitud para Staff</h3>
-            <p class="text-gray-300">¿Quieres ayudar? Postúlate aquí.</p>
-          </a>
-
-          <a href="creador-contenido.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Creador de Contenido</h3>
-            <p class="text-gray-300">Aplica como youtuber o streamer.</p>
-          </a>
-
-          <a href="comandos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Comandos</h3>
-            <p class="text-gray-300">Lista de comandos disponibles en el servidor.</p>
-          </a>
-
-          <a href="objetos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Objetos Personalizados</h3>
-            <p class="text-gray-300">Equipo y objetos únicos que puedes obtener.</p>
-          </a>
-
-          <a href="eventos.html" class="block bg-black bg-opacity-70 hover:bg-opacity-90 transition p-6 rounded-xl shadow-lg">
-            <h3 class="text-xl font-semibold text-yellow-400 mb-2">Eventos</h3>
-            <p class="text-gray-300">Eventos globales y desafíos especiales.</p>
-          </a>
-
+          <!-- Controles del slider -->
+          <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-yellow-400 rounded-full p-2 shadow-lg hover:bg-yellow-500 text-black font-bold text-2xl select-none">‹</button>
+          <button id="next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-yellow-400 rounded-full p-2 shadow-lg hover:bg-yellow-500 text-black font-bold text-2xl select-none">›</button>
         </div>
       </div>
+
+      <!-- Últimas noticias -->
+      <section>
+        <h2 class="text-3xl font-bold text-yellow-400 mb-6">Últimas Noticias</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="bg-black bg-opacity-70 rounded-xl p-6 shadow-md hover:bg-opacity-90 transition">
+            <h3 class="text-xl font-semibold mb-2">Evento de Halloween confirmado</h3>
+            <time datetime="2025-10-01" class="block mb-3 text-yellow-300">1 Octubre 2025</time>
+            <p>Prepárate para la noche más terrorífica con nuevas misiones y recompensas.</p>
+          </article>
+          <article class="bg-black bg-opacity-70 rounded-xl p-6 shadow-md hover:bg-opacity-90 transition">
+            <h3 class="text-xl font-semibold mb-2">Actualización 1.1.5: Corrección de bugs</h3>
+            <time datetime="2025-09-20" class="block mb-3 text-yellow-300">20 Septiembre 2025</time>
+            <p>Solucionamos varios problemas reportados para mejorar la experiencia de juego.</p>
+          </article>
+          <article class="bg-black bg-opacity-70 rounded-xl p-6 shadow-md hover:bg-opacity-90 transition">
+            <h3 class="text-xl font-semibold mb-2">Nueva mascota: Fénix de Fuego</h3>
+            <time datetime="2025-09-10" class="block mb-3 text-yellow-300">10 Septiembre 2025</time>
+            <p>Descubre el poder del Fénix y acompáñalo en tus aventuras.</p>
+          </article>
+        </div>
+        <div class="mt-6 text-center">
+          <a href="noticias.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition">Ver todas las noticias</a>
+        </div>
+      </section>
+
+      <!-- Redes sociales -->
+      <section class="mt-16 text-center">
+        <h2 class="text-3xl font-bold text-yellow-400 mb-6">Únete a la Comunidad</h2>
+        <p class="mb-6 text-gray-300">Sigue a Ashveil y mantente al día con eventos, streams y novedades.</p>
+        <div class="flex justify-center gap-8 text-yellow-400 text-3xl">
+          <a href="https://discord.gg/QfhDQJ3M2C" target="_blank" aria-label="Discord" class="hover:text-yellow-300"><i class="fab fa-discord"></i>Discord</a>
+          <a href="https://www.twitch.tv/tu_canal" target="_blank" aria-label="Twitch" class="hover:text-yellow-300"><i class="fab fa-twitch"></i>Twitch</a>
+          <a href="https://www.youtube.com/tu_canal" target="_blank" aria-label="YouTube" class="hover:text-yellow-300"><i class="fab fa-youtube"></i>YouTube</a>
+          <a href="https://twitter.com/tu_canal" target="_blank" aria-label="Twitter" class="hover:text-yellow-300"><i class="fab fa-twitter"></i>Twitter</a>
+        </div>
+      </section>
+
     </section>
 
     <!-- PIE -->
@@ -125,5 +129,24 @@
       }
     }
   </script>
+
+  <!-- SCRIPT slider simple -->
+  <script>
+    const slider = document.getElementById('slider');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    let index = 0;
+
+    prev.addEventListener('click', () => {
+      index = (index <= 0) ? slider.children.length - 1 : index - 1;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    next.addEventListener('click', () => {
+      index = (index >= slider.children.length - 1) ? 0 : index + 1;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    });
+  </script>
+
 </body>
 </html>
